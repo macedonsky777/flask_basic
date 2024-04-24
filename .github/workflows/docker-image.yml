@@ -1,0 +1,23 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag 777777777777777/myflaskpyapp:latest
+    - name: Build and push
+      uses: docker/build-push-action@v5
+      with:
+        push: true
+        tags: 777777777777777/myflaskpyapp:latest
+        secrets: |
+          GIT_AUTH_TOKEN=${{ secrets.MYTOKEN }}
