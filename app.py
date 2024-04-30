@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return 'Hello world from new image version 2!'
+    return 'Hello world from new image version 3!'
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
