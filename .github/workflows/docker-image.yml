@@ -21,4 +21,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: 777777777777777/myflaskpyapp:latest
+          tags: |
+            777777777777777/myflaskpyapp:latest
+            777777777777777/myflaskpyapp:${{ github.sha }}
